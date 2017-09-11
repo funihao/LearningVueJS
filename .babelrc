@@ -1,0 +1,6 @@
+// modules desactivado ya que lo resuelve webpack
+{
+  "presets": [
+    ["env", { "modules": false }]
+  ]
+}

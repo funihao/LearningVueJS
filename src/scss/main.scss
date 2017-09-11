@@ -1,0 +1,43 @@
+@import '../../node_modules/bulma/sass/utilities/initial-variables';
+
+$bluelight: #a3ecf3;
+$blue: #00bfd6;
+$orange: #ff9300;
+$dark: #212121;
+
+$size-4: 1.46rem;
+$size-7: .5rem;
+
+$warning: $orange;
+
+$primary: $blue;
+
+@import '../../node_modules/bulma/bulma';
+
+button {
+  text-transform: uppercase;
+}
+
+image {
+  width: 265;
+}
+
+input {
+  .input {
+    border-bottom: 1px solid $orange;
+    border-color: $orange;
+    box-shadow: none;
+  }
+}
+
+.end-group {
+  background-color: $orange;
+}
+
+.space {
+  margin-right: 10px;
+}
+
+.thead {
+  background-color: $bluelight;
+}
