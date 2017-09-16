@@ -14,8 +14,8 @@
             strong {{ track.name }}
           p.subtitle.is-6 {{ track.artists[0].name }}
 
-      .content
-        small {{ track.duration_ms }}
+      .content(v-if="track.preview_url")
+        small {{ track.duration_ms / 1000 / 60}}
         nav.level
           .level-left
             a.level-item
