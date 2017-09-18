@@ -80,11 +80,11 @@ export default {
     },
 
     search () {
+      this.tracks = []
+
       if (!this.searchQuery) { return }
 
       this.isLoading = true
-
-      this.tracks = []
 
       trackService.search(this.searchQuery)
         .then(res => {

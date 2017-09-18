@@ -11,57 +11,59 @@
 
 <style lang="scss" scoped>
 
-  .spinner {
-    margin: 100px auto;
-    width: 50px;
-    height: 40px;
-    text-align: center;
-    font-size: 10px;
-  }
+.spinner {
+  font-size: 10px;
+  height: 40px;
+  margin: 100px auto;
+  text-align: center;
+  width: 50px;
 
-  .spinner > div {
+  > div {
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
     background-color: #23d160;
-    height: 100%;
-    width: 6px;
-    margin-right: 1px;
     display: inline-block;
+    height: 100%;
+    margin-right: 1px;
+    width: 6px;
 
     -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
-    animation: sk-stretchdelay 1.2s infinite ease-in-out;
   }
 
-  .spinner .rect2 {
+  .rect2 {
     -webkit-animation-delay: -1.1s;
     animation-delay: -1.1s;
   }
 
-  .spinner .rect3 {
-    -webkit-animation-delay: -1.0s;
-    animation-delay: -1.0s;
+  .rect3 {
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
   }
 
-  .spinner .rect4 {
-    -webkit-animation-delay: -0.9s;
-    animation-delay: -0.9s;
+  .rect4 {
+    -webkit-animation-delay: -.9s;
+    animation-delay: -.9s;
   }
 
-  .spinner .rect5 {
-    -webkit-animation-delay: -0.8s;
-    animation-delay: -0.8s;
+  .rect5 {
+    -webkit-animation-delay: -.8s;
+    animation-delay: -.8s;
   }
+}
 
-  @-webkit-keyframes sk-stretchdelay {
-    0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
-    20% { -webkit-transform: scaleY(1.0) }
-  }
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(.4) }
+  20% { -webkit-transform: scaleY(1) }
+}
 
-  @keyframes sk-stretchdelay {
-    0%, 40%, 100% {
-      transform: scaleY(0.4);
-      -webkit-transform: scaleY(0.4);
-    }  20% {
-      transform: scaleY(1.0);
-      -webkit-transform: scaleY(1.0);
-    }
+@keyframes sk-stretchdelay {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(.4);
+    -webkit-transform: scaleY(.4);
+  }  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
   }
+}
 </style>
