@@ -1,5 +1,5 @@
 <template lang="pug">
-  .container
+  .container.with-margin
     .columns
       .column.is-5.is-offset-4
         pm-track(:track="track")
@@ -29,5 +29,8 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss" scope>
+.with-margin {
+  margin: 10px;
+}
 </style>

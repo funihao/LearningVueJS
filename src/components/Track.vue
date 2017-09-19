@@ -1,8 +1,6 @@
 <template lang="pug">
-  .card(
-    v-if="track && track.album",
 
-    )
+  .card(v-if="track && track.album")
     .card-image
       figure.image.is-1by1
         img(:src="track.album.images[0].url")
@@ -18,30 +16,33 @@
           p.subtitle.is-6 {{ track.artists[0].name }}
 
       .content(v-if="track.preview_url")
-        small {{ track.duration_ms / 1000 / 60}}
+        small {{ track.duration_ms | ms-to-mm }}
         nav.level
           .level-left
-            a.level-item
+            button.button.is-primary.level-item
               span.icon.is-small(@click="selectTrack")
                 i.fa.fa-play
-            a.level-item
+            button.button.is-warning.level-item
               span.icon.is-small(@click="goToTrack(track.id)")
                 i.fa.fa-expand
 </template>
 
 <script>
 export default {
+
   props: {
     track: { type: Object, required: true }
   },
 
   methods: {
     selectTrack () {
+      if (!this.track.preview_url) { return }
       this.$emit('select', this.track.id)
       this.$bus.$emit('set-track', this.track)
     },
 
     goToTrack (id) {
+      if (!this.track.preview_url) { return }
       this.$router.push({ name: 'track', params: { id } })
     }
   }
