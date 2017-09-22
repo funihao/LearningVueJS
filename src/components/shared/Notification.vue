@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .notification {
-    margin: 10px;
+.notification {
+  margin: 10px;
   }
 </style>

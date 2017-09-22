@@ -2,7 +2,7 @@
   footer.footer
     .container
       .content.has-text-centered
-        p Code with love by @funihao
+        p <span class="icon is-small"><i class="fa fa-code"></i></span> with <span class="icon is-small"><i class="fa fa-heart"></i></span> by @funihao
 </template>
 
 <script>

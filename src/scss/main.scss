@@ -14,6 +14,17 @@ $primary: $blue;
 
 @import '../../node_modules/bulma/bulma';
 
+.move-enter-active,
+.move-leave-acive {
+  transform: translateX(0);
+  transition: all .3s linear;
+}
+
+.move-enter,
+.move-leave-to {
+  transform: translateX(100%);
+}
+
 button {
   text-transform: uppercase;
 }

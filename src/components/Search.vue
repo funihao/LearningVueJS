@@ -1,11 +1,11 @@
 <template lang="pug">
   main
+    transition(name="move")
+      pm-notification(:isEmpty="showNotification" v-show="showNotification")
+        p(slot="body") No se encontraron resultados
 
-    pm-notification(:isEmpty="hasData")
-      p(v-if="hasData" slot="body") No se encontraron resultados
-      p(v-else slot="body") {{ searchMessage }}
-
-    pm-loader(v-show="isLoading")
+    transition(name="move")
+      pm-loader(v-show="isLoading")
 
     section.section(v-show="!isLoading")
       nav.nav
@@ -52,7 +52,7 @@ export default {
       tracks: [],
 
       isLoading: false,
-      hasData: false,
+      showNotification: false,
 
       selectedTrack: ''
     }
@@ -89,7 +89,7 @@ export default {
 
       trackService.search(this.searchQuery)
         .then(res => {
-          this.hasData = res.tracks.total === 0
+          this.showNotification = res.tracks.total === 0
           this.tracks = res.tracks.items
           this.isLoading = false
         })
