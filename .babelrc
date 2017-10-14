@@ -1,6 +1,7 @@
 // modules desactivado ya que lo resuelve webpack
 {
   "presets": [
-    ["env", { "modules": false }]
+    ["env", { "modules": false }],
+    ["stage-2"]
   ]
 }

@@ -19,10 +19,10 @@
         small {{ track.duration_ms | ms-to-mm }}
         nav.level
           .level-left
-            button.button.is-primary.level-item
+            a.button.is-primary.level-item
               span.icon.is-small(@click="selectTrack")
                 i.fa.fa-play
-            button.button.is-warning.level-item
+            a.button.is-warning.level-item
               span.icon.is-small(@click="goToTrack(track.id)")
                 i.fa.fa-expand
 </template>
