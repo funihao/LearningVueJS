@@ -58,6 +58,9 @@ export default {
       this.$store.dispatch('incrementAsync', {
         number: 2
       })
+        .then(() => {
+          console.log('Promesa acabada')
+        })
     }
   }
 }
