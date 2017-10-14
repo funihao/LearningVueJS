@@ -49,3 +49,67 @@ Para hacer peticiones _**API RES** _ se utilizaban peticiones _XMLHttpRequest_, 
 ## Ejercicios
 
 [Manipulación del DOM](http://github.com/funihao/LearningVueJS/tree/E-DOM)
+
+## Vuex
+Una librería para manejar estados centralizados.
+
+La idea es tener un almacén central donde actualizamos estados y estos se pueden propagar a todos los componentes sin importar si son padres, hijos o componentes que no tienen relación ninguna.
+
+### Babel Preset Stage2
+Vamos a instalar el '`preset stage-2`' para poder usar los 'spread operator' de ECMAScript 2015 (ES6). Tres puntos antes de una variable.
+```js
+let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
+x; // 1
+y; // 2
+z; // { a: 3, b: 4 }
+```
+Esto lo usaremos para extender la 'computed properties' y así poder añadir otras que no estén en el `store`.
+
+### Estado (**State**)
+En el `store.js` creamos el *'store'* y creamos el *'state'* que contendrá todas las variables que deben estar accesibles para todos los componentes.
+
+```js
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  ... // mas código
+})
+
+export default store
+
+```
+### Mutations
+*`'Mutations'`* contendrá todas las funciones o métodos que necesitamos para modificar (mutar) el estado de las variables del `state`.
+
+```js
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+
+  mutations: {
+    increment (state, payload = {}) {
+      state.count += payload.number || 1
+    },
+
+    decrement (state) {
+      state.count--
+    }
+  }
+})
+
+export default store
+```
+
+### Actions
