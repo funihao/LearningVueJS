@@ -187,3 +187,36 @@ actions: {
   }
 }
 ```
+
+## Nuxt.js
+Creamos otro repositorio ([platzi-music-nuxt](https://github.com/funihao/LearningNuxtJS)) para trabajar con [Nuxt,js](https://nuxtjs.org/).
+
+
+# Deploy con Now
+Vamos a usar [Now](https://zeit.co/now) para servir nuestra aplicación. Para ello tenemos que tener instalado *_'Now'_*.
+
+```sh
+npm install -g now
+```
+
+También necesitamos otro servidor.
+
+```sh
+npm i -S serve
+```
+
+Modificamos el `package.json` para introducir un nuevo script que `now` va a buscar, `start`.
+
+```json
+{
+  // ... 
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "start": "serve --single"
+  },
+
+ // ... 
+```
+
+

@@ -5,7 +5,7 @@
         .container
           .nav-left
             .nav-item
-              strong Platzi Music
+              strong 📻 Platzi Music
           .nav-right.nav-menu
             router-link.nav-item(to="search") Buscar
             router-link.nav-item(to="about") Nosotros
