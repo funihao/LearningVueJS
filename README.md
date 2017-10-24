@@ -209,14 +209,27 @@ Modificamos el `package.json` para introducir un nuevo script que `now` va a bus
 
 ```json
 {
-  // ... 
+  // ...
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "start": "serve --single"
-  },
+  }
 
- // ... 
 ```
 
+Para poder hacer el _'deploy'_ debemos construir la aplicación para producción. Quitamos del `.gitignore` la carpeta _'dist/'_ para que se suba al repositorio.
 
+```sh
+npm build
+```
+
+Ahora solo necesitamos ejecutar `now` en la terminal y el se engargara de todo.
+
+# Internalización con vue-i18n
+Internalización es adaptar nuestra `app` o nuestro site para diferentes idiomas.
+Para esto vamos a usar el paquete `vue-i18n` que lo instalamos como dependencia:
+
+```sh
+npm i -S vue-i18n
+```

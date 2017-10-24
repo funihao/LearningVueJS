@@ -7,9 +7,12 @@
             .nav-item
               strong 📻 Platzi Music
           .nav-right.nav-menu
-            router-link.nav-item(to="search") Buscar
-            router-link.nav-item(to="about") Nosotros
-
+            router-link.nav-item(to="search") {{ $t('search') }}
+            router-link.nav-item(to="about") {{ $t('about') }}
+            a.nav-item(@click="selectLang('en')")
+              strong 🇪🇸
+            a.nav-item(@click="selectLang('es')")
+              strong 🇬🇧
     .hero-body
       .container.has-text-centered
         h1.title Platzi Music
@@ -21,7 +24,13 @@
 import PmPlayer from '@/components/Player'
 
 export default {
-  components: { PmPlayer }
+  components: { PmPlayer },
+
+  methods: {
+    selectLang (lang) {
+      this.$i18n.locale = lang
+    }
+  }
 }
 </script>
 
